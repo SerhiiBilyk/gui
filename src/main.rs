@@ -1,5 +1,4 @@
 use orbtk::prelude::*;
-use orbtk::widgets;
 
 #[derive(Debug, Copy, Clone)]
 enum Action {
@@ -10,11 +9,6 @@ enum Action {
 pub struct MainViewState {
     num: i32,
     action: Option<Action>,
-}
-
-struct Event {
-    x: f32,
-    y: f32,
 }
 
 impl MainViewState {
