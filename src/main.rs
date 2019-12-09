@@ -35,6 +35,7 @@ impl Template for MainView {
                         .build(ctx),
                 )
                 .child(
+                    // Is there way to get state from here ?
                     TextBlock::create()
                         .width(0.0)
                         .height(14.0)
@@ -58,6 +59,8 @@ impl State for MainViewState {
                 }
                 _ => {}
             }
+
+            // Is it possible to get rid of this line ?
             self.action = None;
         }
     }
