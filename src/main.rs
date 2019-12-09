@@ -39,17 +39,12 @@ impl Template for MainView {
 }
 
 impl State for MainViewState {
-    fn update(&mut self, reg: &mut Registry, ctx: &mut Context<'_>) {
+    fn update(&mut self, _: &mut Registry, ctx: &mut Context<'_>) {
         if let Some(action) = self.action {
             match action {
                 Action::Increment(digit) => {
-                    self.num += digit;
-
                     *ctx.widget().get_mut::<usize>("counter") += digit as usize;
-
                     let counter = *ctx.widget().get::<usize>("counter");
-                    println!("counter {}", counter);
-
                     ctx.widget().set(
                         "result",
                         String16::from(format!("Button count: {}", counter)),
