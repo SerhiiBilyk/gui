@@ -54,6 +54,7 @@ impl State for MainViewState {
             match action {
                 Action::Increment(digit) => {
                     self.num += digit;
+                    println!("STATE {}", self.num);
                 }
                 _ => {}
             }
